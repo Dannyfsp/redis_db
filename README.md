@@ -29,9 +29,44 @@ It should be noted that for this project, the redis cloud was used and not the l
 - **getAllPersons**: This method retrieves all the users saved in the Redis database.
 
 ## Endpoints
-- *POST* **http://localhost:2011/api/person** - create a new user
-- *GET* **http://localhost:2011/api/person/:id** - retrieves a particular user
-- *PUT* **http://localhost:2011/api/person/:id** - updates a particular user
-- *DELETE* **http://localhost:2011/api/person/:id** - deletes a particular user
-- *GET* **http://localhost:2011/api/persons** - retrieve all users
+- *POST* **{{URL}}/api/person** - create a new user
+- *GET* **{{URL}}/api/person/:id** - retrieves a particular user
+- *PUT* **{{URL}}/api/person/:id** - updates a particular user
+- *DELETE* **{{URL}}/api/person/:id** - deletes a particular user
+- *GET* **{{URL}}/api/persons** - retrieve all users
 
+## Usage
+This project is open to use by anyone. To use it make sure you have node installed on your machine. You can as well install redis but if you can't, don't worry about it, I got you covered. All you have to do is go to https://redis.com and sign up, it's totally free, when you sign up, you will be allocated with 30GB of Redis cloud server and you will be given a url of which encompases your username and password.
+
+Now that everything is in place, let's dive straight in😊😊😊.
+
+1. Clone this repo to your local machine.
+
+2. Open your terminal and create a .env file
+> touch .env
+
+3. Inside the .env file fill in the following
+```
+PORT=***
+REDIS_URL=****
+```
+Ensure to replace the *s with the port number of your choice and your redis url either gotten from the redis cloud server or from your local machine.
+
+4. Now you have to install all the dependencies by using:
+> npm install
+
+5. Now run your application:
+> npm start
+
+viola 😊😊😊 you're all set. Enjoy.
+
+## Notes
+It is recommended to download RedisInsight which is a GUI of redis server. It helps in having a view and a fill of data saved to the database as it can be difficult or almost impossible to get keys of our data in the redis cloud server.
+
+You can download RedisInsight from https://redis.com
+
+## Resources
+- The official documentation of Redis OM for NodeJS helped a great deal - https://redis.io/docs/stack/get-started/tutorials/stack-node/
+
+## Author
+- Aghogho Daniel Bogare - [please reach out to me for any corrections or opinion](danbogare@gmail.com)
