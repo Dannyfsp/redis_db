@@ -74,3 +74,25 @@ export const updatePerson = async (req, res) => {
     return res.status(500).json({ status: "Failed", message: error.message });
   }
 };
+
+export const deletePerson = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const person = await personRepository.fetch(id);
+    if (person.email === null) {
+      return res
+        .status(400)
+        .json({ message: `User with id ${id} does not exist 😥` });
+    }
+    await personRepository.remove(id);
+
+    return res
+      .status(200)
+      .json({
+        status: "Success",
+        message: `User with id ${id} deleted successfully`,
+      });
+  } catch (error) {
+    return res.status(500).json({ status: "Failed", message: error.message });
+  }
+};

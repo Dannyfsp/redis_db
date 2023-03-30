@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   createPerson,
+  deletePerson,
   getAllPersons,
   getPersonById,
   updatePerson,
@@ -16,4 +17,4 @@ router.post("/person", createPerson);
 
 router.put("/person/:id", updatePerson);
 
-router.delete("/person/:id");
+router.delete("/person/:id", deletePerson);
